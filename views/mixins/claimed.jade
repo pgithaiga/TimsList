@@ -1,0 +1,9 @@
+mixin claimed(postId, name, description, price, claimer)
+	.post.panel.panel-info
+		.panel-heading(id= postId) #{name}
+			.pull-right $#{price}
+		.panel-body(style="display: none")
+			.post-info-container
+				p #{description}
+				.pull-left.text-info Claimed by: #{claimer.email}
+				

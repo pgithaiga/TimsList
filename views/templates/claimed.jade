@@ -1,0 +1,4 @@
+include ../mixins/claimed
+
+each val in postsData
+	+claimed(val._id, val.name, val.description, val.initialPrice, val.claimer)

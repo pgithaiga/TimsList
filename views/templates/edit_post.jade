@@ -1,0 +1,16 @@
+
+.container      
+  form#edit-post-form(role="form" enctype="multipart/form-data")
+    .form-group
+      label.col-md-3.control-label(for='name') Item Name :
+      input#post-name.form-control(type="text" name="name" value='#{name}' required)
+    .form-group
+      label.col-md-3.control-label(for='decription') Description:
+      input#post-description.form-control(type="textarea" name="description" value='#{description}' required)
+    .form-group
+     
+      label.col-md-3.control-label(for='price') Price $
+      input#post-price.form-control(type="text" name="initialPrice" value='#{price}' required)  
+
+      button#edit-post-button.btn.btn-default(type="submit" data-postid='#{postId}') Save Changes
+      

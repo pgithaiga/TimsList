@@ -1,0 +1,4 @@
+include ../mixins/posts
+
+each val in postsData
+	+post(userId, val.author, val._id, val.name, val.description, val.initialPrice, val.isAuctioningItem, val.expirationDate)

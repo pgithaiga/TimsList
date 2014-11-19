@@ -1,0 +1,12 @@
+mixin post(loggedInUserId, author, postId, name, description, price, isAuctioningItem, expirationDate)
+	.post.panel.panel-info
+		.panel-heading(id= postId) #{name}
+			.pull-right $#{price}
+		.panel-body(style="display: none")
+			.post-info-container
+				p #{description}
+				.pull-left.text-info Sold by: #{author.email}
+				if (loggedInUserId != author._id)
+					.claim.pull-right
+						.btn.btn-primary(data-postid='#{postId}' onclick='claimItem(this)') Claim Item
+					

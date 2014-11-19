@@ -1,0 +1,46 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.container {
+  margin-bottom: 20px;
+}
+
+.list-group-item:hover, #new_post:hover {
+  cursor: pointer;
+  color: #00B7FF;
+}
+
+.panel-heading:hover {
+	cursor: pointer;
+}
+
+td {
+	margin: 20px;
+	padding-bottom: 20px;
+	padding-right: 10px;
+}
+
+
+#item_name, #item_description, #post-name, #post-description{
+  max-width:500px;
+}
+
+#item_price, #post-price{
+  max-width : 100px;
+}
+
+.menu-edit-post {
+	padding-right: 10px;
+}
+
+.menu-edit-post:hover, .menu-delete-post:hover{
+	cursor: pointer;
+	color: #00B7FF;
+}
+

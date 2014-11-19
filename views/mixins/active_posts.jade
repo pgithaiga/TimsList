@@ -1,0 +1,16 @@
+mixin active_post(loggedInUserId, author, postId, name, description, price, isAuctioningItem, expirationDate)
+	- var editPostUrl = '/users/' + userId + '/posts' + postId
+	.post.panel.panel-info
+		.panel-heading(id= postId) #{name}
+			.pull-right $#{price}
+		.panel-body(style="display: none")
+			.post-info-container
+				p #{description}
+				.pull-left.text-info Sold by: #{author.email}
+				if (loggedInUserId == author._id)
+					.post-edit.pull-right
+						span.menu-delete-post.glyphicon.glyphicon-remove.pull-right(data-postid="#{postId}")
+						span.menu-edit-post.glyphicon.glyphicon-pencil.pull-right(data-name="#{name}" data-description='#{description}' data-price='#{price}' data-postid='#{postId}')
+
+						
+						

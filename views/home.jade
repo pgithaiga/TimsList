@@ -1,0 +1,32 @@
+extends layout
+
+block content
+	#userId(style='display: none;')= user._id
+
+	.container
+		.row
+			.col-md-3
+				.panel.panel-default
+					.panel-body
+						h4 Peter Githaiga
+						#nav.list-group
+							a#all-active.nav-option.list-group-item.active
+								| All Active Posts
+							a#my-active.nav-option.list-group-item
+								| My Active Posts
+							a#my-claimed.nav-option.list-group-item
+								| My Claimed Posts
+							a#my-claims.nav-option.list-group-item
+								| My Claims
+				.panel.panel-default
+					.panel-heading#new_post Post new item
+						
+
+			
+			.col-md-9
+				.panel.panel-default
+					.panel-body#main-body
+						script loadAllActivePosts()
+
+
+

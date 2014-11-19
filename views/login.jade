@@ -1,0 +1,74 @@
+doctype html
+html
+  head
+    title
+    link(href='/stylesheets/bootstrap.min.css', rel='stylesheet', media='screen')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    .container
+      #loginbox.mainbox.col-md-6.col-md-offset-3.col-sm-8.col-sm-offset-2(style='margin-top: 50px;')
+        .panel.panel-info
+          .panel-heading
+            .panel-title Sign In
+          .panel-body(style='padding-top: 30px;')
+            #login-alert.alert.alert-danger.col-sm-12(style='display: none;')
+            form#loginform.form-horizontal(role='form', method='post', action='/users/login')
+              .input-group(style='margin-bottom: 25px;')
+                span.input-group-addon
+                  i.glyphicon.glyphicon-user
+                input#login-username.form-control(type='text', name='email', value='', placeholder='email')
+                span.input-group-addon @mit.edu
+              .input-group(style='margin-bottom: 25px;')
+                span.input-group-addon
+                  i.glyphicon.glyphicon-lock
+                input#login-password.form-control(type='password', name='password', placeholder='password')
+              .form-group(style='margin-top: 10px;')
+                .col-sm-12.controls
+                  input.fill-div.btn.btn-primary.btn-lg(type='submit', name='login', value='Login')
+              .form-group
+                .col-md-12.control
+                  div(style='border-top: 1px solid#888; padding-top: 15px; font-size: 85%;')
+                    | Don't have an account!
+                    a(href='#', onclick='$(\'#loginbox\').hide(); $(\'#signupbox\').show()')
+                      | Sign Up Here
+      #signupbox.mainbox.col-md-6.col-md-offset-3.col-sm-8.col-sm-offset-2(style='display: none; margin-top: 50px;')
+        .panel.panel-info
+          .panel-heading
+            .panel-title Sign Up
+            div(style='float: right; font-size: 85%; position: relative; top: -10px;')
+              a#signinlink(onclick='$(\'#signupbox\').hide(); $(\'#loginbox\').show()') Sign In
+          .panel-body
+            form#signupform.form-horizontal(role='form', method='post', action='/users/signup')
+              #signupalert.alert.alert-danger(style='display: none;')
+                p Error:
+                span
+              .form-group
+                label.col-md-3.control-label(for='firstname') First Name
+                .col-md-9
+                  input.form-control(type='text', name='firstName', placeholder='First Name', required)
+              .form-group
+                label.col-md-3.control-label(for='lastname') Last Name
+                .col-md-9
+                  input.form-control(type='text', name='lastname', placeholder='Last Name', required)
+              .form-group
+                label.col-md-3.control-label(for='email') Kerberos
+                .col-md-9
+                    input.form-control(type='text', name='email', placeholder='MIT Kerberos', required)                    
+              .form-group
+                label.col-md-3.control-label(for='phonenumber') Phone Number
+                .col-md-9
+                  input.form-control(type='text', name='phoneNumber', pattern='[0-9]{10}' placeholder='Phone Number')
+              
+              .form-group
+                label.col-md-3.control-label(for='password') Password
+                .col-md-9
+                  input.form-control(type='password', name='password', placeholder='Password', required)
+              .form-group
+                label.col-md-3.control-label(for='password') Confirm Password
+                .col-md-9
+                  input.form-control(type='password', name='password_confirmation', placeholder='Password Confirmation', required)
+              .form-group
+                .col-md-offset-3.col-md-9
+                  input.fill-div.btn.btn-primary.btn-lg(type='submit', name='login', value='Sign Up')
+        script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+        script(src='/js/bootstrap.min.js')

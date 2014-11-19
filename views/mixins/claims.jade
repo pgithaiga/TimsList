@@ -1,0 +1,8 @@
+mixin claim(postId, name, description, price, author)
+	.post.panel.panel-info
+		.panel-heading(id= postId) #{name}
+			.pull-right $#{price}
+		.panel-body(style="display: none")
+			.post-info-container
+				p #{description}
+				.pull-left.text-info Sold by: #{author.email}

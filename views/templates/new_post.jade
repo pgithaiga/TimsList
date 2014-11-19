@@ -1,0 +1,14 @@
+.container      
+  form(role="form" enctype="multipart/form-data")
+    .form-group
+      label.col-md-3.control-label(for='name') Item Name :
+      input#item_name.form-control(type="text" name="name" placeholder="Enter Item Name" required)
+    .form-group
+      label.col-md-3.control-label(for='decription') Description:
+      input#item_description.form-control(type="textarea" name="description" placeholder="Enter Item Description" required)
+    .form-group
+      label.col-md-3.control-label(for='price') Price $
+      input#item_price.form-control(type="text" name="initialPrice" placeholder="Price" required)
+      button#item_post_button.btn.btn-default(type="submit") Submit
+
+    
